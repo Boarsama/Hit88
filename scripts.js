@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     spinButton.addEventListener('click', function() {
         spinPopup.style.display = 'flex';
         setTimeout(function() {
-            document.getElementById('resultMessage').textContent = 'Chúc mừng bạn nhận được mã random 500k';
+            document.getElementById('resultMessage').textContent = 'Chúc mừng bạn nhận được mã Tân Thủ';
         }, 3000); // Delay to show the popup
     });
 
