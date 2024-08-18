@@ -14,7 +14,7 @@ header {
 
 header #logo {
     width: 150px;
-    opacity: 0.15; /* Điều chỉnh độ mờ của logo */
+    opacity: 0.1; /* Điều chỉnh độ mờ của logo */
 }
 
 nav ul {
@@ -45,7 +45,7 @@ main {
 #banner img {
     width: 100%;
     height: auto;
-    opacity: 0.17; /* Điều chỉnh độ mờ của banner */
+    opacity: 0.12; /* Điều chỉnh độ mờ của banner */
 }
 
 #content h1 {
