@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background: rgba(0, 0, 0, 0.8);
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ trang */
     color: #fff;
     margin: 0;
     padding: 0;
@@ -14,7 +15,7 @@ header {
 
 header #logo {
     width: 150px;
-    opacity: 0.1; /* Điều chỉnh độ mờ của logo */
+    opacity: 0.5; /* Điều chỉnh độ mờ của logo */
 }
 
 nav ul {
@@ -45,7 +46,7 @@ main {
 #banner img {
     width: 100%;
     height: auto;
-    opacity: 0.12; /* Điều chỉnh độ mờ của banner */
+    opacity: 0.7; /* Điều chỉnh độ mờ của banner */
 }
 
 #content h1 {
