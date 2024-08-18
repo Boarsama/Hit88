@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Giải Trí Cao Cấp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .header, .taskbar, .footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #ffd700;
+        }
+        .taskbar {
+            display: flex;
+            justify-content: space-around;
+        }
+        .taskbar a {
+            color: #ffd700;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .main-content {
+            background-image: url('your-blurred-background.png');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        .spin-button {
+            background-color: #ffd700;
+            color: #000;
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 50px;
+            box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
+        }
+        .spin-button:hover {
+            background-color: #ffda44;
+        }
+        .wheel {
+            margin: 50px auto;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #ffd700;
+            background-color: #333;
+        }
+        .segment {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #ffd700;
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+        .footer {
+            margin-top: 50px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            z-index: 10;
+        }
+        .popup-content {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 10% auto;
+            max-width: 400px;
+            text-align: center;
+        }
+        .popup-content input {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+        .popup-content button {
+            background-color: #ffd700;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cổng Giải Trí Cao Cấp</h1>
+    </div>
+    <div class="taskbar">
+        <a href="#home">Trang Chủ</a>
+        <a href="#contact">Liên Hệ</a>
+        <a href="#policy">Chính Sách</a>
+        <a href="#hotline">Hotline</a>
+    </div>
+    <div class="main-content">
+        <h2>Chào mừng bạn đến với cổng giải trí hàng đầu</h2>
+        <p>Khám phá nhiều trải nghiệm thú vị với các vòng quay may mắn.</p>
+        <button class="spin-button" id="spin-btn">Tham Gia Vòng Quay</button>
+    </div>
+    <div class="footer">
+        <p>© 2024 Cổng Giải Trí Cao Cấp. Hotline: 1234-567-890</p>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Chúc mừng bạn!</h2>
+            <p>Bạn nhận được mã quà tặng 500k: ABCD1234</p>
+            <button onclick="window.open('https://hit88.trangchu.online', '_blank')">Nhận 500k</button>
+        </div>
+    </div>
+
+    <script>
+        // Mã hóa để Google không thể quét
+        function decodeString(encoded) {
+            return atob(encoded);
+        }
+
+        // Kích hoạt popup sau 3 giây hoặc khi bấm nút
+        setTimeout(function() {
+            document.getElementById("popup").style.display = "block";
+        }, 3000);
+
+        document.getElementById("spin-btn").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "block";
+        });
+
+        // Mã hóa nội dung cần thiết
+        const encodedCode = btoa('https://hit88.trangchu.online');
+        console.log(decodeString(encodedCode));
+    </script>
+</body>
+</html>
