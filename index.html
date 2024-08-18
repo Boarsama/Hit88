@@ -1,199 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Game Portal</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: rgba(0, 0, 0, 0.8) url('your-background-image.png') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        header {
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        .main-content {
-            margin: 50px auto;
-            max-width: 600px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
-
-        .button {
-            background-color: #ffcc00;
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background-color: #ffd633;
-        }
-
-        #loading {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
-            color: white;
-        }
-
-        .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Spin Wheel */
-        #wheel {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 50px auto;
-            border-radius: 50%;
-            border: 10px solid #ffcc00;
-            background: #fff;
-            text-align: center;
-        }
-
-        #wheel .segment {
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            transform-origin: 100% 100%;
-            background-color: #ffcc00;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .segment-text {
-            transform: rotate(-45deg);
-        }
-    </style>
+    <title>Cổng Game Thế Giới Giải Trí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-
-<header>
-    <h1>Welcome to the Game Portal</h1>
-</header>
-
-<div class="main-content">
-    <p>Chào mừng bạn đến với Cổng Game Thế Giới Giải Trí – điểm đến hoàn hảo dành cho những ai yêu thích sự hồi hộp và niềm vui bất tận! Tại đây, chúng tôi mang đến cho người chơi cơ hội trải nghiệm các trò chơi đa dạng, phong phú, với những vòng quay may mắn đầy hấp dẫn. Không chỉ là một cổng game thông thường, Thế Giới Giải Trí tự hào mang lại cho bạn một không gian giải trí đẳng cấp, hiện đại và luôn đổi mới.
-
-Với giao diện thân thiện, tinh tế, cùng với thiết kế sang trọng, Cổng Game Thế Giới Giải Trí đem lại cho người chơi cảm giác thư giãn, thoải mái như đang bước vào một thế giới mới đầy màu sắc. Tại đây, bạn sẽ được trải nghiệm những giây phút giải trí đỉnh cao cùng các vòng quay thú vị, mang về cho mình nhiều phần thưởng hấp dẫn. Mỗi vòng quay là một cơ hội để bạn nhận được những mã quà tặng có giá trị, từ các thiết bị công nghệ cao cấp cho đến những phần thưởng hiện kim hấp dẫn.
-
-Chúng tôi cam kết luôn bảo mật thông tin người chơi, mang lại môi trường công bằng, minh bạch và an toàn. Hệ thống của chúng tôi được tối ưu hóa để người chơi dễ dàng tham gia mọi lúc, mọi nơi chỉ với vài cú nhấp chuột. Hãy cùng hòa mình vào không gian giải trí tuyệt vời và khám phá thế giới bất tận của những vòng quay may mắn.
-
-Nhanh tay tham gia và tận hưởng những phút giây thú vị, đầy bất ngờ tại Cổng Game Thế Giới Giải Trí!</p>
-    <button id="spinButton" class="button">Quay Ngay</button>
-</div>
-
-<!-- Spin Wheel (hidden initially) -->
-<div id="spinWheelContainer" style="display: none;">
-    <div id="wheel">
-        <!-- Define your segments here -->
-        <div class="segment" style="transform: rotate(0deg); background: #f00;">
-            <span class="segment-text">iPhone</span>
-        </div>
-        <div class="segment" style="transform: rotate(45deg); background: #0f0;">
-            <span class="segment-text">500K</span>
-        </div>
-        <!-- Add more segments -->
-    </div>
-    <p id="spinResult">Kết quả: </p>
-    <button id="claimButton" class="button">Nhận Thưởng</button>
-</div>
-
-<!-- Loading spinner -->
-<div id="loading">
-    <div class="spinner"></div>
-    <p>Đang tải...</p>
-</div>
-
-<script>
-    const spinButton = document.getElementById('spinButton');
-    const claimButton = document.getElementById('claimButton');
-    const spinWheelContainer = document.getElementById('spinWheelContainer');
-    const loading = document.getElementById('loading');
-
-    // Show the wheel and hide the spin button
-    spinButton.addEventListener('click', () => {
-        showLoading();
-        setTimeout(() => {
-            hideLoading();
-            spinButton.style.display = 'none';
-            spinWheelContainer.style.display = 'block';
-            spinWheel();
-        }, 1000); // Delay for loading animation
-    });
-
-    // Handle claiming the reward
-    claimButton.addEventListener('click', () => {
-        showLoading();
-        setTimeout(() => {
-            window.open('https://hit88.trangchu.online', '_blank');
-            hideLoading();
-        }, 1000);
-    });
-
-    function showLoading() {
-        loading.style.display = 'flex';
-    }
-
-    function hideLoading() {
-        loading.style.display = 'none';
-    }
-
-    function spinWheel() {
-        // Simple spin effect for the wheel
-        const wheel = document.getElementById('wheel');
-        wheel.style.transition = 'transform 3s ease-out';
-        const angle = Math.floor(Math.random() * 360) + 360 * 3; // Spins at least 3 times
-        wheel.style.transform = `rotate(${angle}deg)`;
+    <header>
+        <img src="logo.png" alt="Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#about">Giới Thiệu</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+                <li><a href="#policy">Chính Sách</a></li>
+                <li><a href="#hotline">Hotline</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="banner">
+            <img src="banner.png" alt="Banner">
+        </section>
         
-        // Set the result
-        setTimeout(() => {
-            const result = Math.floor(Math.random() * 9); // Random number for spin result
-            document.getElementById('spinResult').innerText = `Kết quả: Bạn nhận được ${result}`;
-        }, 3000); // Show result after spin completes
-    }
-</script>
+        <section id="content">
+            <h1>Chào Mừng Đến Với Cổng Game Thế Giới Giải Trí</h1>
+            <p>Khám phá một thế giới giải trí đầy màu sắc và nhận các phần thưởng hấp dẫn!</p>
+            <button id="spinButton">Quay Ngay</button>
+        </section>
+    </main>
+    
+    <footer>
+        <section id="contact">
+            <p>Liên Hệ: <a href="mailto:info@trangchu.online">info@trangchu.online</a></p>
+        </section>
+        <section id="policy">
+            <p>Chính Sách: <a href="#">Xem Chi Tiết</a></p>
+        </section>
+        <section id="hotline">
+            <p>Hotline: 123-456-789</p>
+        </section>
+    </footer>
+    
+    <div id="spinPopup" class="popup">
+        <div class="popup-content">
+            <button id="closePopup">&times;</button>
+            <div id="wheel"></div>
+            <p id="resultMessage"></p>
+            <input type="text" id="rewardCode" value="MÃ THƯỞNG: 500K" readonly>
+            <button id="claimButton">Nhận 500K</button>
+        </div>
+    </div>
 
+    <script src="scripts.js"></script>
 </body>
 </html>
