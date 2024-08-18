@@ -14,25 +14,30 @@
             text-align: center;
             overflow-x: hidden;
         }
+
         .header, .taskbar, .footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             margin-bottom: 20px;
         }
+
         .header h1 {
             margin: 0;
             font-size: 36px;
             color: #ffd700;
         }
+
         .taskbar {
             display: flex;
             justify-content: space-around;
         }
+
         .taskbar a {
             color: #ffd700;
             text-decoration: none;
             padding: 10px 20px;
         }
+
         .main-content {
             background-image: url('your-blurred-background.png');
             background-size: cover;
@@ -41,6 +46,7 @@
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
+
         .spin-button {
             background-color: #ffd700;
             color: #000;
@@ -52,28 +58,44 @@
             margin-top: 50px;
             box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
         }
+
         .spin-button:hover {
             background-color: #ffda44;
         }
-        .wheel {
+
+        .wheel-container {
             margin: 50px auto;
             position: relative;
             width: 300px;
             height: 300px;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            border: 5px solid #ffd700;
-            background-color: #333;
+            border: 10px solid #ffd700;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-image: conic-gradient(#ffd700, #333, #ffd700, #333, #ffd700, #333);
+            transition: transform 4s ease-out;
         }
-        .segment {
+
+        .arrow {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            background-color: #ffd700;
-            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid red;
         }
+
         .footer {
             margin-top: 50px;
         }
+
         .popup {
             display: none;
             position: fixed;
@@ -85,6 +107,7 @@
             color: #fff;
             z-index: 10;
         }
+
         .popup-content {
             background-color: #222;
             border-radius: 10px;
@@ -93,12 +116,14 @@
             max-width: 400px;
             text-align: center;
         }
+
         .popup-content input {
             padding: 10px;
             margin-top: 20px;
             border-radius: 5px;
             border: none;
         }
+
         .popup-content button {
             background-color: #ffd700;
             color: #000;
@@ -130,6 +155,12 @@
         <p>© 2024 Cổng Giải Trí Cao Cấp. Hotline: 1234-567-890</p>
     </div>
 
+    <!-- Vòng Quay -->
+    <div class="wheel-container">
+        <div class="arrow"></div>
+        <div class="wheel" id="wheel"></div>
+    </div>
+
     <!-- Popup -->
     <div class="popup" id="popup">
         <div class="popup-content">
@@ -140,23 +171,23 @@
     </div>
 
     <script>
-        // Mã hóa để Google không thể quét
-        function decodeString(encoded) {
-            return atob(encoded);
+        const wheel = document.getElementById("wheel");
+        const popup = document.getElementById("popup");
+        const spinBtn = document.getElementById("spin-btn");
+
+        function spinWheel() {
+            const randomDeg = Math.floor(Math.random() * 360) + 1440; // Random góc quay, cộng thêm 4 vòng
+            wheel.style.transform = `rotate(${randomDeg}deg)`;
+
+            setTimeout(() => {
+                popup.style.display = "block";
+            }, 4000); // Hiển thị popup sau khi quay xong (4 giây)
         }
 
-        // Kích hoạt popup sau 3 giây hoặc khi bấm nút
-        setTimeout(function() {
-            document.'getElementById("popup").style.display = "block";
-        }, 3000);
+        spinBtn.addEventListener("click", spinWheel);
 
-        document.getElementById("spin-btn").addEventListener("click", function() {
-            document.getElementById("popup").style.display = "block";
-        });
-
-        // Mã hóa nội dung cần thiết
-        const encodedCode = btoa('https://hit88.trangchu.online');
-        console.log(decodeString(encodedCode));
+        // Tự động hiển thị vòng quay sau 3 giây nếu không click
+        'setTimeout(spinWheel, 3000);
     </script>
 </body>
 </html>
