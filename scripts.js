@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     claimButton.addEventListener('click', function() {
         setTimeout(function() {
-            window.open('https://hit88.games', '_blank');
+            'window.open('https://hit88.games', '_blank');
         }, 1000); // 1s delay before redirect
     });
 });
