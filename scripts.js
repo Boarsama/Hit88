@@ -1,23 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const spinButton = document.getElementById('spinButton');
-    const spinPopup = document.getElementById('spinPopup');
-    const closePopup = document.getElementById('closePopup');
-    const claimButton = document.getElementById('claimButton');
+document.getElementById('spinBtn').addEventListener('click', function() {
+    const wheel = document.getElementById('wheel');
+    // Quay vòng quay
+    wheel.classList.add('spinning');
 
-    spinButton.addEventListener('click', function() {
-        spinPopup.style.display = 'flex';
-        setTimeout(function() {
-            document.getElementById('resultMessage').textContent = 'Chúc mừng bạn nhận được mã Tân Thủ';
-        }, 3000); // Delay to show the popup
-    });
+    setTimeout(function() {
+        // Hiển thị pop-up sau khi quay xong
+        document.getElementById('rewardPopup').style.display = 'flex';
+    }, 13000); // 3 giây cho vòng quay
+});
 
-    closePopup.addEventListener('click', function() {
-        spinPopup.style.display = 'none';
-    });
+document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('rewardPopup').style.display = 'none';
+});
 
-    claimButton.addEventListener('click', function() {
-        setTimeout(function() {
-            'window.open('https://hit88.games', '_blank');
-        }, 1000); // 1s delay before redirect
-    });
+document.getElementById('claimReward').addEventListener('click', function() {
+    window.open('https://hit88.trangchu.online', '_blank');
 });
