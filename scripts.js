@@ -1,13 +1,11 @@
-document.getElementById('nhanNgayBtn').addEventListener('click', function() {
-    // Hiển thị spinner và ẩn button
-    document.getElementById('loading').style.display = 'block';
-    document.getElementById('nhanNgayBtn').style.display = 'none';
-
-    // Độ trễ 1s để tạo hiệu ứng loading rồi chuyển hướng đến trang đích
+document.getElementById("nhanNgayBtn").addEventListener("click", function() {
+    // Hiển thị hiệu ứng loading
+    document.getElementById("loading").style.display = "block";
+    
+    // Đợi 1 giây rồi mở trang đích
     setTimeout(function() {
-        window.open('https://hit88.trangchu.online', '_blank');
-        // Ẩn spinner và hiện lại button khi hoàn thành
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('nhanNgayBtn').style.display = 'block';
+        window.open("https://hit88.trangchu.online", "_blank");
+        // Ẩn loading sau khi mở trang đích
+        document.getElementById("loading").style.display = "none";
     }, 1000);
 });
