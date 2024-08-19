@@ -1,19 +1,100 @@
-/* Spinner CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Màu tối sang trọng */
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 150px;
+    filter: blur(2px); /* Làm mờ logo */
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar li {
+    margin: 0 15px;
+}
+
+.nav-bar li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#banner {
+    padding: 60px 20px;
+    border: 1px solid #fff;
+    margin-bottom: 40px;
+}
+
+#banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#banner p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#banner button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#banner button img {
+    width: 150px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
+.contact-info span {
+    font-size: 16px;
+}
+
 .spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin: 20px auto;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
