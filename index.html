@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cổng Game Giải Trí</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Thế Giới Giải Trí</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <img src="logo.png" alt="Logo" id="logo">
-        <nav>
-            <ul>
-                <li><a href="#">Trang Chủ</a></li>
-                <li><a href="#">Trò Chơi</a></li>
-                <li><a href="#">Khuyến Mãi</a></li>
-                <li><a href="#">Liên Hệ</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#about">Giới Thiệu</a></li>
+                    <li><a href="#policy">Chính Sách</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <section id="content">
-            <h1>Chào Mừng Đến Với Thế Giới Giải Trí</h1>
-            <p>
-                Cổng game giải trí đa dạng với nhiều thể loại hấp dẫn đang chờ đón bạn. Tận hưởng không gian giải trí
-                đỉnh cao với những trò chơi đầy thú vị, mang lại cảm giác hồi hộp và phần thưởng lớn. Với giao diện
-                sang trọng và hiện đại, cổng game của chúng tôi mang đến trải nghiệm tốt nhất cho người chơi. Tham gia
-                ngay hôm nay để nhận mã tân thủ và có cơ hội giành những phần quà cực lớn.
-            </p>
-            <!-- Button Nhận Ngay -->
-        <button id="nhanNgayBtn">
-            <img src="NhanNgay.png" alt="Nhận Ngay">
-        </button>
+        <section id="banner">
+            <h1>Thế Giới Giải Trí Sang Trọng</h1>
+            <p>Nơi mang đến cho bạn những trải nghiệm thú vị, hấp dẫn và cơ hội tham gia vào các sự kiện độc đáo.</p>
+            <button id="nhanNgayBtn">
+                <img src="NhanNgay.png" alt="Nhận Ngay">
+            </button>
+        </section>
 
-            <!-- Animation loading (ẩn mặc định) -->
+        <!-- Animation loading (ẩn mặc định) -->
         <div id="loading" style="display: none;">
             <div class="spinner"></div>
         </div>
 
-        
-    <section id="banner">
-        <img src="banner.png" alt="Banner">
-    </section>
-        
-        <div class="popup" id="rewardPopup">
-            <div class="popup-content">
-                <span id="closePopup">&times;</span>
-                <h2>Chúc Mừng!</h2>
-                <p>Bạn đã nhận được mã tân thủ: <strong id="rewardCode">ABC12345</strong></p>
-                <button id="claimReward">Nhận 500K</button>
+        <footer>
+            <div class="contact-info">
+                <span>Hotline: 0123 456 789</span>
+                <span>Email: contact@thegioigiaiitri.com</span>
+                <span>Chính Sách Bảo Mật</span>
             </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-row">
-            <div class="footer-col">
-                <p>Hotline: 1900-123-456</p>
-            </div>
-            <div class="footer-col">
-                <p>Email: support@thegioigame.vn</p>
-            </div>
-            <div class="footer-col">
-                <p>Địa chỉ: 123 Đường Giải Phóng, Hà Nội</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
