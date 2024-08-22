@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LDZH88 - Cổng Giải Trí Hoàng Gia</title>
+    <title>Hit99 - Cổng Giải Trí Hoàng Gia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,12 +15,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .container {
             text-align: center;
-            max-width: 800px;
+            max-width: 100%;
+            width: 90%;
             border: 1px solid #444;
             border-radius: 8px;
             background: rgba(0, 0, 0, 0.7);
@@ -30,8 +32,9 @@
         }
 
         .logo {
-            opacity: 0.7;
-            width: 200px;
+            opacity: 0.9; /* Make logo more visible */
+            width: 80%;
+            max-width: 200px;
             margin: 0 auto;
             display: block;
         }
@@ -52,25 +55,51 @@
             cursor: pointer;
             border: none;
             margin-top: 20px;
-            text-indent: -9999px; /* Hide text */
+            text-indent: -9999px; /* Hide text, if any */
+        }
+
+        .cta-button::after {
+            content: 'Tìm Hiểu Thêm';
+            display: block;
+            text-indent: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            line-height: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 0 10px;
         }
 
         .contact-info {
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
             margin-top: 20px;
+            font-size: 14px;
         }
 
         .contact-info a {
             color: #fff;
             text-decoration: none;
+            margin-top: 10px;
         }
 
         .banner {
             margin-top: 20px;
-            opacity: 0.7;
+            width: 100%;
+            max-width: 100%;
+            opacity: 0.9;
             display: block;
             margin: 0 auto;
+            border: none; /* Remove border around banner */
+        }
+
+        @media(min-width: 768px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
         }
     </style>
 </head>
@@ -78,16 +107,16 @@
     <div class="container">
         <img src="logo.png" alt="Logo" class="logo">
         <div class="content">
-            <h1>Chào mừng đến với HIT99</h1>
-            <p>Trải nghiệm thế giới giải trí đỉnh cao tại cổng game hoàng gia HIT99! Chúng tôi mang đến cho bạn những phút giây thư giãn với các trò chơi hấp dẫn và phần thưởng giá trị.</p>
+            <h1>Chào mừng đến với Hit99</h1>
+            <p>Trải nghiệm thế giới giải trí đỉnh cao tại cổng game hoàng gia Hit99! Chúng tôi mang đến cho bạn những phút giây thư giãn với các trò chơi hấp dẫn và phần thưởng giá trị.</p>
         </div>
 
         <!-- CTA Button -->
-        <a 'href="https://1link.pro/XeLn2LV" class="cta-button" aria-label="Tham Gia"></a>
+        <a href="https://1link.pro/XeLn2LV" class="cta-button" aria-label="Tìm Hiểu Thêm"></a>
 
         <div class="contact-info">
             <span>Hotline: 1900 9108</span>
-            <span>Email: <a href="mailto:support@hit99.site">support@hit99.site</a></span>
+            <span>Email: <a href="mailto:support@hit99.com">support@hit99.com</a></span>
             <span><a href="terms-and-conditions.html">Chính sách</a></span>
         </div>
     </div>
